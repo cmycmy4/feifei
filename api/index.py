@@ -2,6 +2,10 @@ from flask import Flask
 from lark_oapi.adapter.flask import *
 import lark_oapi as lark
 
+def handle_event(body):
+    # ✅ 第一时间处理飞书验证请求
+    if body.get("type") == "url_verification":
+        return {"challenge": body.get("challenge")}  # 必须原样返回 challenge
 app = Flask(__name__)
 
 
