@@ -62,7 +62,7 @@ def handle_event(body):
     return {"code": 0, "msg": "success"}
 
 class handler(BaseHTTPRequestHandler):
-        def do_GET(self):
+    def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
